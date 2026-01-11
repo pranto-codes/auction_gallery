@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Leica M3 Camera",
+    "description": "A classic hand-crafted leather strap watch in excellent condition.",
+    "currentBidPrice": "$ 2120",
+    "timeLeft": "2h 15m",
+    "bidsCount": 8,
+    "image": "https://i.postimg.cc/DZsqGNNX/Bid1-min.png"
+  },
+  {
+    "id": 2,
+    "title": "1965 Gibson SG Standard Electric Guitar",
+    "description": "1930s Remington portable typewriter, fully functional with original keys.",
+    "currentBidPrice": "$ 2120",
+    "timeLeft": "5h 30m",
+    "bidsCount": 12,
+    "image": "https://i.postimg.cc/HL0Y742s/Bid2-min.png"
+  },
+  {
+    "id": 3,
+    "title": "Original Apple Macintosh 128K (1984)",
+    "description": "Unique blue-and-white porcelain vase painted by local artisans.",
+    "currentBidPrice": "$ 858",
+    "timeLeft": "1h 45m",
+    "bidsCount": 5,
+    "image": "https://i.postimg.cc/NMJw1NrH/Bid3-min.png"
+  },
+  {
+    "id": 4,
+    "title": "Rolex Submariner 16610",
+    "description": "'Imagine' by John Lennon, mint condition.",
+    "currentBidPrice": "$ 1450",
+    "timeLeft": "3h 20m",
+    "bidsCount": 16,
+    "image": "https://i.postimg.cc/TPQ86k0z/Bid4-min.png"
+  },
+  {
+    "id": 5,
+    "title": " 'The Great Gatsby' by F. Scott Fitzgerald",
+    "description": "Fully working 1980s Canon AE-1 film camera with 50mm lens.",
+    "currentBidPrice": "$ 450",
+    "timeLeft": "6h 10m",
+    "bidsCount": 9,
+    "image": "https://i.postimg.cc/Wbr1vvkd/Bid5-min.png"
+  },
+  {
+    "id": 6,
+    "title": "Mid-Century Modern Lounge Chair",
+    "description": "Official Premier League jersey signed by top players, includes certificate.",
+    "currentBidPrice": "$ 750",
+    "timeLeft": "4h 5m",
+    "bidsCount": 22,
+    "image": "https://i.postimg.cc/gjhmmVnz/Bid6-min.png"
+  },
+  {
+    "id": 7,
+    "title": "Banksy Original Screen Print",
+    "description": "Gold-trimmed Parker pen with black lacquer finish and fine nib.",
+    "currentBidPrice": "$ 1320",
+    "timeLeft": "30m",
+    "bidsCount": 3,
+    "image": "https://i.postimg.cc/SxdqSNNZ/Bid7-min.png"
+  }
+]
