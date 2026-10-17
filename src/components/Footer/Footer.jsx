@@ -1,72 +1,96 @@
 import React from "react";
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
-  return (
-    <div>
-      <footer className="footer footer-horizontal footer-center  text-primary-content p-10">
-        <aside>
-          <p className="font-bold">
-            <p className="text-2xl">
-              <span className="font-medium text-blue-400">Auction</span>
-              <span className="font-bold text-amber-400">Gallery</span>
-            </p>
+  const navLinks = [
+    { label: "Home", href: "#" },
+    { label: "Auctions", href: "#auctions" },
+    { label: "Categories", href: "#auctions" },
+    { label: "How it works", href: "#how-it-works" },
+  ];
 
-            <div className=" flex justify-center items-center gap-1.5">
-              <p>Bid.</p>
-              <p>Win.</p>
-              <p>Own.</p>
-            </div>
-            <div className="font-medium flex justify-center items-center gap-3.5">
-              <p>Home</p>
-              <p>Auctions</p>
-              <p>Categories</p>
-              <p>How it works</p>
-            </div>
+  return (
+    <footer className="bg-slate-950 text-slate-300">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:py-16">
+        <div>
+          <a href="#" className="inline-block text-2xl tracking-tight">
+            <span className="font-medium text-blue-400">Auction</span>
+            <span className="font-extrabold text-amber-400">Gallery</span>
+          </a>
+
+          <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">
+            Discover remarkable finds, explore unique collections, and enjoy the
+            excitement of finding something that feels truly yours.
           </p>
-          <p>
-            Copyright ©AuctionHub {new Date().getFullYear(2025)} - All right
-            reserved
+
+          <p className="mt-4 text-sm font-semibold tracking-wide text-white">
+            Discover. Bid. Own.
           </p>
-        </aside>
-        <nav>
-          <div className="grid grid-flow-col gap-4">
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
+        </div>
+
+        <div>
+          <h3 className="font-semibold text-white">Explore</h3>
+          <ul className="mt-4 space-y-3 text-sm">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} className="transition hover:text-amber-400">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-semibold text-white">Stay connected</h3>
+          <p className="mt-4 text-sm leading-6 text-slate-400">
+            Follow along for updates and inspiration from the world of auctions.
+          </p>
+
+          <div className="mt-5 flex gap-3">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-blue-600 hover:text-white"
+            >
+              <FaFacebookF size={16} />
             </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-              </svg>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-pink-600 hover:text-white"
+            >
+              <FaInstagram size={16} />
             </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-              </svg>
+
+            <a
+              href="https://x.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="X"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-slate-700 hover:text-white"
+            >
+              <FaXTwitter size={16} />
             </a>
           </div>
-        </nav>
-      </footer>
-    </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center text-xs text-slate-500 sm:px-8 md:flex-row md:text-left">
+          <p>
+            © {new Date().getFullYear()} AuctionGallery. All rights reserved.
+          </p>
+
+          <p>Made for people who love discovering unique things.</p>
+        </div>
+      </div>
+    </footer>
   );
 };
 

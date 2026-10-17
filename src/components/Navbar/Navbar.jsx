@@ -1,81 +1,123 @@
-import React from "react";
+import React, { useState } from "react";
+import { CiBellOn, CiMenuBurger, CiUser } from "react-icons/ci";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: "Home", href: "#" },
+    { label: "Auctions", href: "#auctions" },
+    { label: "Categories", href: "#auctions" },
+    { label: "How It Works", href: "#how-it-works" },
+  ];
+
   return (
-    <div>
-      <div className="navbar bg-base-100 ">
-        <div className="">
-          <p className="text-2xl">
-            <span className="font-medium text-blue-400">Auction</span>
-            <span className="font-bold text-amber-400">Gallery</span>
-          </p>
-        </div>
-        <div className="navbar-center gap-2">
-          <ul>Home</ul> <ul>Auctions</ul> <ul>Categories</ul>{" "}
-          <ul>How to works</ul>
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <a
+          href="#"
+          className="shrink-0 text-2xl font-bold tracking-tight no-underline"
+        >
+          <span className="text-blue-600">Auction</span>
+          <span className="text-amber-500">Gallery</span>
+        </a>
+
+        {/* Desktop navigation */}
+        <div className="hidden items-center gap-2 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="rounded-full px-4 py-2 text-sm font-semibold text-gray-700 no-underline transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
-        <div className="flex justify-end items-end">
-          <div className="dropdown dropdown-end">
-            <button className="btn btn-ghost btn-circle">
-              <div className="indicator">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {" "}
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />{" "}
-                </svg>
-                <span className="badge badge-xs badge-primary indicator-item"></span>
-              </div>
-            </button>
-            <div
+        {/* Action buttons */}
+        <div className="flex shrink-0 items-center gap-1">
+          <button
+            type="button"
+            aria-label="Notifications"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-transparent text-gray-700 transition hover:bg-gray-100 hover:text-blue-600"
+          >
+            <CiBellOn size={25} />
+          </button>
+
+          <div className="dropdown dropdown-end hidden sm:block">
+            <button
+              type="button"
               tabIndex={0}
-              className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
-            ></div>
-          </div>{" "}
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
+              aria-label="Open profile menu"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-blue-50 hover:text-blue-600"
             >
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
+              <CiUser size={23} />
+            </button>
+
             <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              tabIndex={0}
+              className="menu dropdown-content z-50 mt-3 w-48 rounded-xl border border-gray-200 bg-white p-2 text-gray-800 shadow-lg"
             >
               <li>
-                <a className="justify-between">
+                <a
+                  href="#profile"
+                  className="text-gray-700 hover:bg-blue-50 hover:text-blue-700"
+                >
                   Profile
-                  <span className="badge">New</span>
                 </a>
               </li>
               <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
+                <a
+                  href="#settings"
+                  className="text-gray-700 hover:bg-blue-50 hover:text-blue-700"
+                >
+                  Settings
+                </a>
               </li>
             </ul>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-800 transition hover:bg-blue-50 hover:text-blue-700 md:hidden"
+          >
+            {menuOpen ? <CiX size={25} /> : <CiMenuBurger size={25} />}
+          </button>
         </div>
-      </div>
-    </div>
+      </nav>
+
+      {/* Mobile navigation */}
+      {menuOpen && (
+        <div className="border-t border-gray-200 bg-white px-4 py-3 shadow-md md:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-lg px-4 py-3 text-sm font-semibold text-gray-800 no-underline transition-colors hover:bg-blue-50 hover:text-blue-700"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <a
+              href="#profile"
+              onClick={() => setMenuOpen(false)}
+              className="block rounded-lg px-4 py-3 text-sm font-semibold text-gray-800 no-underline transition-colors hover:bg-blue-50 hover:text-blue-700 sm:hidden"
+            >
+              My Profile
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 
